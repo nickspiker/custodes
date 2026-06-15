@@ -1,0 +1,10 @@
+[package]
+name = "custodes"
+version = "0.0.0"
+edition = "2024"
+description = "K-of-N social recovery for TOKEN identities: Shamir secret sharing across human guardians, threshold-gated, no plaintext leaves the device."
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/nickspiker/custodes"
+readme = "README.md"
+
+[dependencies]
