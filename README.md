@@ -1,3 +1,5 @@
+![custodes](custodes.webp)
+
 # custodes
 
 **Lose all your devices? Call a custodian.**
@@ -149,6 +151,12 @@ Core implemented and tested: Shamir split/reconstruct over GF(2⁸) (Lagrange at
 Two integration seams are stubbed (`todo!`) until the TOKEN/voca phase: per-custodian encryption (`Shard::encrypt_to`, binds TOKEN's KEM + an AEAD) and the out-of-band verification phrases (`notify_custodians`, binds the `voca` crate).
 
 Honesty note in the crate docs: the GF(2⁸) arithmetic is textbook-correct but not yet constant-time, and `reconstruct` has no integrity check of its own — a corrupted shard corrupts the output until the AEAD tag at the encryption seam rejects it. Both are deliberate, documented, and gated on integration.
+
+## Terminology
+
+custodes recovers a TOKEN identity — its *ihi* (the provable identity) and the device *ira* it is bound to — when every device is lost. Custodians are themselves TOKEN identities (their pubkeys are TOKEN pubkeys); verification phrases are *voca*-encoded for the phone channel. The shared identity vocabulary (*ihi*, *ira*, *wairua*, *whakaira*, the chip states) is defined in the cross-stack glossary: `GLOSSARY.md` in the ferros repo.
+
+---
 
 ## License
 
